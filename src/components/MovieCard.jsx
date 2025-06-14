@@ -2,6 +2,7 @@ import { StarIcon } from 'lucide-react'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import timeFormate from '../lib/timeFormate'
+import DateSelect from './DateSelect'
 
 const MovieCard = ({movie}) => {
     const navigate = useNavigate()
