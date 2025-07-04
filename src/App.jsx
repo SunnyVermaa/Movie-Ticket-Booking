@@ -10,6 +10,11 @@ import Favorite from './pages/Favorite'
 import {Toaster} from 'react-hot-toast'
 import Footer from './components/Footer'
 import HeroSection from './components/HeroSection'
+import Layout from './pages/admin/Layout'
+import Dashboard from './pages/admin/Dashboard'
+import AddShow from './pages/admin/AddShow'
+import ListShow from './pages/admin/ListShow'
+import ListBookings from './pages/admin/ListBookings'
 
 const App = () => {
 const isAdminRoute = useLocation().pathname.startsWith('/admin')
@@ -23,8 +28,14 @@ const isAdminRoute = useLocation().pathname.startsWith('/admin')
     <Route path='/movies' element={<Movies/>} />
     <Route path='/movies/:id' element={<MoviesDetails/>} />
     <Route path='/movies/:id/:date' element={<SeatLayout/>} />
-    <Route path='/my-booking' element={<MyBooking/>} />
+    <Route path='/my-bookings' element={<MyBooking/>} />
     <Route path='/favorite' element={<Favorite/>} />
+    <Route path='/admin/*' element={<Layout/>}>
+      <Route index element={<Dashboard/>}/>
+      <Route path='add-show' element={<AddShow/>}/>
+      <Route path='add-list' element={<ListShow/>} />
+      <Route path='list-bookings' element={<ListBookings/>}/>
+    </Route>
 
   </Routes>
 { !isAdminRoute && <Footer/>}
