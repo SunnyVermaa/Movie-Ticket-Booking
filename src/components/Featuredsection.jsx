@@ -12,10 +12,10 @@ const Featuredsection = () => {
       <div className='px-6 md:px-16 lg:px-24 xl:px-44 overflow-hidden'>
     <div className='relative flex items-center justify-between pt-20 pb-10 '>
         <BlurCircle top='0' right='-80px'/>
-        <p className='text-gray-300 font-medium text-lg'>
+        <p className='text-[#ce9edded] font-medium text-lg'>
             Now showing
         </p>
-        <button onClick={() => navigate('/movies')} className='group flex items-center gap-2 text-sm text-gray-300 cursor-pointer'>
+        <button onClick={() => navigate('/movies')} className='group flex items-center gap-2 text-sm text-[#ce9edded] cursor-pointer'>
             View all
             <ArrowRight className='w-5 h-5 group-hover:translate-x-0.5 transition'/>
         </button>

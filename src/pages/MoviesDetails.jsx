@@ -33,16 +33,16 @@ const MoviesDetails = () => {
         <div className='relative flex flex-col gap-3 '>
           <BlurCircle top='-100px' left='-100px'/>
           <p className='text-primary'>ENGLISH</p>
-          <h1 className='text-4xl font-semibold max-w-96 text-balance'>{show.movie.title}</h1>
+          <h1 className='text-4xl font-semibold max-w-96 text-balance text-[#ce9edded]'>{show.movie.title}</h1>
 
-          <div className='flex items-center gap-2 text-gray-300'>
+          <div className='flex items-center gap-2 text-[#e0eef8df]'>
             <StarIcon className='w-5 h-5 text-primary fill-primary'/>
             {show.movie.vote_average.toFixed(1)} User Rating
 
           </div>
 
-          <p className='text-gray-400 mt-2 text-sm leading-tight max-w-xl'> {show.movie.overview}</p>
-          <p> {timeFormate(show.movie.runtime)} • {show.movie.genres.map(genre => genre.name).join(", ")} • {show.movie.release_date.split("-")[0]} </p>
+          <p className='text-[#e0eef8df] mt-2 text-sm leading-tight max-w-xl'> {show.movie.overview}</p>
+          <p className='text-[#ce9edded]'> {timeFormate(show.movie.runtime)} • {show.movie.genres.map(genre => genre.name).join(", ")} • {show.movie.release_date.split("-")[0]} </p>
 
           <div className='flex item-center flex-wrap gap-4 mt-4'>
             <button className='flex item-center gap-2 px-7 py-3 text-sm bg-gray-800 hover:bg-gray-900 transition rounded-md font-medium cursor-pointer active:scale-95'>
@@ -56,20 +56,20 @@ const MoviesDetails = () => {
 
       </div>
 
-      <p className='text-lg font-medium mt-20'>Your Favorite Cast</p>
+      <p className='text-lg font-medium mt-20 text-[#ce9edded]'>Your Favorite Cast</p>
       <div className='overflow-x-auto mt-8 no-scrollbar pb-4'>
         <div className='flex items-center gap-4 w-max px-4'>
           {show.movie.casts.slice(0,12).map((cast,index) => (
             <div key={index} className='flex flex-col items-center text-center'>
               <img src={cast.profile_path} alt="" className='rounded-full h-20 md:h-20 aspect-square object-cover'/>
-              <p className='font-medium text-sx mt-3'>{cast.name}</p>
+              <p className='font-medium text-sx mt-3 text-[#e0eef8df]'>{cast.name}</p>
             </div>
           ))}
         </div>
       </div>
           <DateSelect dateTime={show.dateTime} id={id}/>
 
-          <p className='text-lg font-medium mt-20 mb-8'>You may like this</p>
+          <p className='text-lg font-medium mt-20 mb-8 text-[#ce9edded]'>You may like this</p>
           <div className='flex flex-wrap max-sm:justify-center gap-10'>
             {dummyShowsData.slice(0,3).map((movie, index) => (
               <MovieCard key={index} movie={movie} />

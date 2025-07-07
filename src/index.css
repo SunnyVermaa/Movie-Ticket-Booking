@@ -2,14 +2,19 @@
 @import "tailwindcss";
 
 @theme{
-  --color-primary: red;
-  --color-primary-dull: #D63854;
+  --color-primary: #7F55B1;
+  --color-primary-dull: #9B7EBD;
+}
+
+@font-face {
+  font-family: new-look;
+  src: url(./assets/Saira/Saira-VariableFont_wdth\,wght.ttf);
 }
 
 
 
 *{
-   font-family: "Outfit", sans-serif;
+   /* font-family:"new-look"; */
    scrollbar-width: thin;
    scrollbar-color: #787777 #1e1e1e;
 }
